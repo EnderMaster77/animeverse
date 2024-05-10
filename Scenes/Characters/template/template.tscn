@@ -1,0 +1,135 @@
+[gd_scene load_steps=19 format=3 uid="uid://jiijl876a8qs"]
+
+[ext_resource type="Texture2D" uid="uid://b3g6n1h8ykn8g" path="res://icon.svg" id="1_0mcbh"]
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_gqk3e"]
+[ext_resource type="PackedScene" uid="uid://cstnth5yeg4sw" path="res://Scenes/Components/HealthComponent.tscn" id="3_h6tfo"]
+[ext_resource type="Script" path="res://Scripts/attacksmanager.gd" id="3_xiu0e"]
+[ext_resource type="PackedScene" uid="uid://bcdteu1jviiig" path="res://Scenes/Characters/template/attacks/light.tscn" id="4_43rue"]
+[ext_resource type="PackedScene" uid="uid://bppf31fad5djw" path="res://Scenes/Characters/template/attacks/h0.tscn" id="5_ybc8x"]
+[ext_resource type="PackedScene" uid="uid://j362yu1l1riy" path="res://Scenes/Components/PlayerHitbox.tscn" id="6_bdcdi"]
+[ext_resource type="PackedScene" uid="uid://dyyjug8rdgsn8" path="res://Scenes/Characters/template/attacks/h1.tscn" id="6_ui3rp"]
+[ext_resource type="PackedScene" uid="uid://docwvveq11n7n" path="res://Scenes/Characters/template/attacks/h2.tscn" id="7_8tifv"]
+[ext_resource type="PackedScene" uid="uid://cn0x7ofqfsw8n" path="res://Scenes/Characters/template/attacks/h3.tscn" id="8_mbwhc"]
+[ext_resource type="PackedScene" uid="uid://c66mm6o7g4bcn" path="res://Scenes/Characters/template/attacks/h4.tscn" id="9_77xv1"]
+[ext_resource type="PackedScene" uid="uid://c261n1knq34up" path="res://Scenes/Characters/template/attacks/ah0.tscn" id="12_4c71y"]
+[ext_resource type="PackedScene" uid="uid://bxyoa4g61qtaj" path="res://Scenes/Characters/template/attacks/ah1.tscn" id="13_wrirh"]
+[ext_resource type="PackedScene" uid="uid://brm2dvytugju8" path="res://Scenes/Characters/template/attacks/ah2.tscn" id="14_4p7ve"]
+[ext_resource type="PackedScene" uid="uid://cmc1t6ed3167t" path="res://Scenes/Characters/template/attacks/ah3.tscn" id="15_8df6g"]
+[ext_resource type="PackedScene" uid="uid://j3fegltj2i3w" path="res://Scenes/Characters/template/attacks/ah4.tscn" id="16_718rx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eo4l"]
+size = Vector2(128, 128)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8tefe"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:facing_right")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player", "Trackable"]]
+script = ExtResource("1_gqk3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2eo4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0mcbh")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_h6tfo")]
+
+[node name="PlayerHitbox" parent="." node_paths=PackedStringArray("healthcomponent") instance=ExtResource("6_bdcdi")]
+collision_layer = 2
+collision_mask = 2
+healthcomponent = NodePath("../HealthComponent")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+shape = SubResource("RectangleShape2D_2eo4l")
+
+[node name="dashtimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="dashcooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Attacks" type="Node2D" parent="." node_paths=PackedStringArray("l_attack_man", "h0_attack_man", "h1_attack_man", "h2_attack_man", "h3_attack_man", "h4_attack_man", "ah0_attack_man", "ah1_attack_man", "ah2_attack_man", "ah3_attack_man", "ah4_attack_man")]
+script = ExtResource("3_xiu0e")
+l_attack_man = NodePath("Light")
+h0_attack_man = NodePath("H0")
+h1_attack_man = NodePath("H1")
+h2_attack_man = NodePath("H2")
+h3_attack_man = NodePath("H3")
+h4_attack_man = NodePath("H4")
+ah0_attack_man = NodePath("AH0")
+ah1_attack_man = NodePath("AH1")
+ah2_attack_man = NodePath("AH2")
+ah3_attack_man = NodePath("AH3")
+ah4_attack_man = NodePath("AH4")
+
+[node name="Light" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("4_43rue")]
+position = Vector2(65, 1)
+first_attack = NodePath("0")
+full_cd_duration = 0.0
+
+[node name="H1" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("6_ui3rp")]
+position = Vector2(65, 1)
+first_attack = NodePath("0")
+
+[node name="H2" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("7_8tifv")]
+position = Vector2(65, 1)
+first_attack = NodePath("0")
+
+[node name="H3" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("8_mbwhc")]
+position = Vector2(65, 1)
+first_attack = NodePath("0")
+
+[node name="H4" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("9_77xv1")]
+position = Vector2(65, 1)
+first_attack = NodePath("0")
+
+[node name="H0" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("5_ybc8x")]
+position = Vector2(65, 1)
+first_attack = NodePath("0")
+full_cd_duration = 0.5
+
+[node name="AH0" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("12_4c71y")]
+first_attack = NodePath("0")
+
+[node name="AH1" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("13_wrirh")]
+first_attack = NodePath("0")
+
+[node name="AH2" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("14_4p7ve")]
+first_attack = NodePath("0")
+
+[node name="AH3" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("15_8df6g")]
+first_attack = NodePath("0")
+
+[node name="AH4" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("16_718rx")]
+first_attack = NodePath("0")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_8tefe")
+
+[node name="hplabel" type="Label" parent="."]
+offset_left = -64.0
+offset_top = -87.0
+offset_right = 65.0
+offset_bottom = -64.0
+text = "HP: 100"
+horizontal_alignment = 1
+
+[node name="awakenpercentlabel" type="Label" parent="."]
+auto_translate_mode = 1
+offset_left = -64.0
+offset_top = -112.0
+offset_right = 65.0
+offset_bottom = -89.0
+text = "Awaken: 0%"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="dashtimer" to="." method="_on_dashtimer_timeout"]
+[connection signal="timeout" from="dashcooldown" to="." method="_on_dashcooldown_timeout"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://j6q1i0wh6o0q"]
+
+[ext_resource type="PackedScene" uid="uid://j362yu1l1riy" path="res://Scenes/Components/PlayerHitbox.tscn" id="1_6ukyg"]
+[ext_resource type="Script" path="res://Scripts/dummy.gd" id="1_mpt1p"]
+[ext_resource type="PackedScene" uid="uid://cstnth5yeg4sw" path="res://Scenes/Components/HealthComponent.tscn" id="2_fo2t8"]
+[ext_resource type="Texture2D" uid="uid://b3g6n1h8ykn8g" path="res://icon.svg" id="3_rkk07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bf6c8"]
+size = Vector2(254, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7q5g"]
+size = Vector2(189, 215)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jgsvf"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="dummy" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_mpt1p")
+
+[node name="PlayerHitbox" parent="." node_paths=PackedStringArray("healthcomponent") instance=ExtResource("1_6ukyg")]
+collision_layer = 2
+collision_mask = 2
+healthcomponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+z_index = 4096
+shape = SubResource("RectangleShape2D_bf6c8")
+debug_color = Color(0, 1, 0, 0.419608)
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_fo2t8")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.454902, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("3_rkk07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 20.5)
+shape = SubResource("RectangleShape2D_u7q5g")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_jgsvf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -128.0
+offset_top = -208.0
+offset_right = 124.0
+offset_bottom = -139.0
+theme_override_font_sizes/font_size = 50
+text = "HP: 100"
+horizontal_alignment = 1
+vertical_alignment = 1

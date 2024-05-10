@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://c66mm6o7g4bcn"]
+
+[ext_resource type="Script" path="res://Scripts/attackmanager.gd" id="1_1rgh1"]
+[ext_resource type="PackedScene" uid="uid://cidkh7fh5ofub" path="res://Scenes/Components/attackhb.tscn" id="2_qhkq2"]
+
+[node name="H4" type="Node2D" node_paths=PackedStringArray("first_attack")]
+script = ExtResource("1_1rgh1")
+first_attack = NodePath("0")
+
+[node name="0" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_startup_duration = 1.0
+attack_transition = NodePath("../1")
+
+[node name="1" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../2")
+
+[node name="2" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../3")
+
+[node name="3" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../4")
+
+[node name="4" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../5")
+
+[node name="5" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../6")
+
+[node name="6" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../7")
+
+[node name="7" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../8")
+
+[node name="8" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(10, 0)
+stun_duration = 0.5
+cooldown_duration = 0.05
+attack_transition = NodePath("../9")
+
+[node name="9" parent="." instance=ExtResource("2_qhkq2")]
+visible = false
+scale = Vector2(7.64, 7.52)
+knockback = Vector2(2000, -1000)
+stun_duration = 0.5
+cooldown_duration = 0.05
+
+[node name="cleartimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="attack_complete" from="0" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="1" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="2" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="3" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="4" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="5" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="6" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="7" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="8" to="." method="_on__attack_complete"]
+[connection signal="attack_complete" from="9" to="." method="_on__attack_complete"]
+[connection signal="timeout" from="cleartimer" to="." method="_on_cleartimer_timeout"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

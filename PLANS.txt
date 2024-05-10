@@ -1,0 +1,44 @@
+CORE IDEAS:
+	-fighting game
+	-4 moves
+	-Awakening
+	-Light Move | DONE!
+	-Heavy Move
+	-Block
+AFK right now. I'll wake up at 12.
+
+
+
+CHARACTERS:
+	-Arthur (Fire Force)
+	-shinra (Fire Force)
+	-Nanami (JJK)
+	-Toji (JJK)
+	-Choso (JJK)
+	-Rimaru (Slime Isekai)
+	-Kagura (Bachi Man)
+	-Keraeyaru (hentai)
+	-main guy from overflow
+	-Kazuma
+	-Kazuya
+	-Gojo
+	-Luffy "One" Piece
+	-TenTen (Naruto) | Jonah prob dont add
+	-Rock Lee
+	-Itachi (Naruto)
+	-Sheldon Cooper
+	-Gon (HxH)
+	-Killua (HxH)
+	-Hisoga
+	-Jonsey
+	-Aladin from madi
+Expansion Pack:
+	-Let Me solo her
+	-Kirito
+	-Gengi
+	-Walter White
+	-Penny and Stocking
+
+TECH DETAILS:
+	-Attacks are area2ds
+	-Attacks with multiple stages are nodes2d with the hitboxes of the attacks.

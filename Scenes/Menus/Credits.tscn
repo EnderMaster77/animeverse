@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7yye7fgnvdj2"]
+
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_hkm67"]
+
+[node name="Credit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkm67")
+
+[node name="Label4" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 280.0
+offset_right = 571.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 75
+text = "Main Developer"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 384.0
+offset_right = 600.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 75
+text = "Javier
+(EnderMaster08)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 1472.0
+offset_top = 280.0
+offset_right = 1920.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 75
+text = "Art Director"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 1472.0
+offset_top = 376.0
+offset_right = 1920.0
+offset_bottom = 585.0
+theme_override_font_sizes/font_size = 75
+text = "Isa
+(Bready)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 672.0
+offset_top = 272.0
+offset_right = 1248.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 75
+text = "Character Ideas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 736.0
+offset_top = 368.0
+offset_right = 1184.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 50
+text = "Jonah
+(DragonEye)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 736.0
+offset_top = 512.0
+offset_right = 1184.0
+offset_bottom = 653.0
+theme_override_font_sizes/font_size = 50
+text = "Mike
+(mikethecringe)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 736.0
+offset_top = 656.0
+offset_right = 1184.0
+offset_bottom = 797.0
+theme_override_font_sizes/font_size = 50
+text = "Santi
+(Palemedes)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 736.0
+offset_top = 800.0
+offset_right = 1184.0
+offset_bottom = 941.0
+theme_override_font_sizes/font_size = 50
+text = "Dough
+(Dough)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_left = 736.0
+offset_top = 944.0
+offset_right = 1184.0
+offset_bottom = 1085.0
+theme_override_font_sizes/font_size = 50
+text = "Daniel
+(Surreal)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 952.0
+offset_right = 320.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 50
+text = "Back
+"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

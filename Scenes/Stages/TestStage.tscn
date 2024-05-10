@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh8ygbu3potgg"]
+
+[ext_resource type="Script" path="res://Scenes/Stages/SpawnManager.gd" id="1_am0n3"]
+[ext_resource type="Texture2D" uid="uid://b3g6n1h8ykn8g" path="res://icon.svg" id="1_oqhqn"]
+[ext_resource type="PackedScene" uid="uid://j6q1i0wh6o0q" path="res://Scenes/Characters/dummy/dummy.tscn" id="3_j3h3n"]
+[ext_resource type="Script" path="res://Scripts/fancycam.gd" id="4_en0ef"]
+[ext_resource type="PackedScene" uid="uid://dnhl2b1aoae7j" path="res://Scenes/Menus/HUD.tscn" id="5_ctyju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pxec"]
+size = Vector2(2299, 127)
+
+[node name="TestStage" type="Node2D"]
+script = ExtResource("1_am0n3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(9.41369, 0.57007)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1154.5, 676.5)
+shape = SubResource("RectangleShape2D_0pxec")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1153.5, 675)
+scale = Vector2(17.9609, 1)
+texture = ExtResource("1_oqhqn")
+
+[node name="dummy" parent="." groups=["Trackable"] instance=ExtResource("3_j3h3n")]
+position = Vector2(1850, 169)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("4_en0ef")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("5_ctyju")]
+
+[node name="0" type="Node2D" parent="." groups=["spawn"]]
+position = Vector2(2054, 153)
+
+[node name="1" type="Node2D" parent="." groups=["spawn"]]
+position = Vector2(2949, 5)

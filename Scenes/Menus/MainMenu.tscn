@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ulqobacrd1h"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_dji3a"]
+[ext_resource type="PackedScene" uid="uid://c7yye7fgnvdj2" path="res://Scenes/Menus/Credits.tscn" id="2_2hffv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dji3a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 100
+text = "Animeverse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayLocal" type="Button" parent="."]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1920.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 50
+text = "Play Local"
+
+[node name="PlayOnline" type="Button" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 448.0
+offset_right = 1920.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 50
+text = "Play Online (NOT ADDED YET!)"
+
+[node name="Credits" type="Button" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 640.0
+offset_right = 1920.0
+offset_bottom = 768.0
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+
+[node name="Quit" type="Button" parent="."]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 832.0
+offset_right = 1920.0
+offset_bottom = 960.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="Credit" parent="." instance=ExtResource("2_2hffv")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="PlayLocal" to="." method="_on_play_local_pressed"]
+[connection signal="pressed" from="PlayOnline" to="." method="_on_play_online_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

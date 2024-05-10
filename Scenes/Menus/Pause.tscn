@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://4xbhofdcmhug"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/pause.gd" id="1_nd8wn"]
+
+[node name="Pause" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nd8wn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 100
+text = "Paused!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unpause" type="Button" parent="Panel"]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1920.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 59
+text = "Unpause"
+
+[node name="MainMenu" type="Button" parent="Panel"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 512.0
+offset_right = 1920.0
+offset_bottom = 704.0
+theme_override_font_sizes/font_size = 59
+text = "Exit To Main Menu"
+
+[node name="Quit" type="Button" parent="Panel"]
+auto_translate_mode = 1
+layout_mode = 0
+offset_top = 776.0
+offset_right = 1920.0
+offset_bottom = 968.0
+theme_override_font_sizes/font_size = 59
+text = "Quit"
+
+[connection signal="pressed" from="Panel/Unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="Panel/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
