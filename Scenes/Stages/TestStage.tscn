@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dh8ygbu3potgg"]
 
-[ext_resource type="Script" path="res://Scenes/Stages/SpawnManager.gd" id="1_am0n3"]
+[ext_resource type="Script" path="res://Scripts/SpawnManager.gd" id="1_am0n3"]
 [ext_resource type="Texture2D" uid="uid://b3g6n1h8ykn8g" path="res://icon.svg" id="1_oqhqn"]
 [ext_resource type="PackedScene" uid="uid://j6q1i0wh6o0q" path="res://Scenes/Characters/dummy/dummy.tscn" id="3_j3h3n"]
 [ext_resource type="Script" path="res://Scripts/fancycam.gd" id="4_en0ef"]

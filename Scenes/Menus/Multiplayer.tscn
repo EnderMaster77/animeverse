@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b61erq47uaoju"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/multiplayer.gd" id="1_1eoga"]
-[ext_resource type="Script" path="res://Scenes/Menus/player_list.gd" id="2_71sko"]
+[ext_resource type="Script" path="res://Scripts/multiplayer.gd" id="1_1eoga"]
+[ext_resource type="Script" path="res://Scripts/player_list.gd" id="2_71sko"]
 
 [node name="Multiplayer" type="Control"]
 layout_mode = 3

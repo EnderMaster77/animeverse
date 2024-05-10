@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnhl2b1aoae7j"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/hud.gd" id="1_rs7n6"]
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_rs7n6"]
 [ext_resource type="PackedScene" uid="uid://4xbhofdcmhug" path="res://Scenes/Menus/Pause.tscn" id="2_5gnte"]
 
 [node name="Hud" type="Control"]
