@@ -80,7 +80,7 @@ func _physics_process(delta):
 		
 		
 		
-	if direction && stunned == false or is_dashing == true:
+	if (direction or is_dashing == true) && stunned == false:
 		if Input.is_action_just_pressed("Dash") && is_dashing == false && can_dash == true:
 			is_dashing = true
 			can_dash = false
