@@ -14,7 +14,6 @@ func damage(atk: attack):
 	else:
 		get_parent().velocity = atk.knockback * Vector2(-1,1)
 		
-	print(atk.knockback)
 
 
 func _on_stuntimer_timeout():

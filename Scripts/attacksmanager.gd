@@ -1,5 +1,5 @@
 extends Node2D
-class_name attacks_manager
+class_name attacks_manager ## Manages attacks and everything related to them.
 
 @export var l_attack_man: attackmanager
 @export var h0_attack_man: attackmanager
@@ -36,16 +36,22 @@ func _physics_process(delta):
 func normal_inputs():
 	if Input.is_action_just_pressed("LightAttack"):
 		l_attack_man.start_attack()
+		$"../Sprite2D".play("light")
 	if Input.is_action_just_pressed("Heavy0") && h0_attack_man.ready_to_attack == true:
 		h0_attack_man.start_attack()
+		$"../Sprite2D".play("h0")
 	if Input.is_action_just_pressed("Heavy1") && h1_attack_man.ready_to_attack == true:
 		h1_attack_man.start_attack()
+		$"../Sprite2D".play("h1")
 	if Input.is_action_just_pressed("Heavy2") && h2_attack_man.ready_to_attack == true:
 		h2_attack_man.start_attack()
+		$"../Sprite2D".play("h2")
 	if Input.is_action_just_pressed("Heavy3") && h3_attack_man.ready_to_attack == true:
 		h3_attack_man.start_attack()
+		$"../Sprite2D".play("h3")
 	if Input.is_action_just_pressed("Heavy4") && h4_attack_man.ready_to_attack == true:
 		h4_attack_man.start_attack()
+		$"../Sprite2D".play("h4")
 
 func awakened_inputs():
 	if Input.is_action_just_pressed("LightAttack"):

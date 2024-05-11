@@ -3,14 +3,12 @@ extends Camera2D
 var targets: Array = []
 func _process(delta) -> void:
 	targets.clear()
-	print(global_position)
 	get_targets()
 	global_position = Vector2.ZERO
 	for i in targets:
 		global_position += i
 	global_position /= targets.size()
 	var target_distance = get_farthest_targets_dist()
-	print(target_distance)
 	#global_position = (target2.global_position + target1.global_position ) / 2
 	if 0.3 / (target_distance / 4000) >= 0.75:
 		zoom.x = 0.75

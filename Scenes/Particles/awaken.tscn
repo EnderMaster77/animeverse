@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjoxwlfgm7o2e"]
+
+[sub_resource type="Gradient" id="Gradient_jnsub"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_if3n0"]
+gradient = SubResource("Gradient_jnsub")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8lje3"]
+particle_flag_disable_z = true
+angle_min = -376.0
+angle_max = 338.7
+spread = 90.0
+initial_velocity_min = 914.82
+initial_velocity_max = 914.82
+gravity = Vector3(0, 98, 0)
+color_ramp = SubResource("GradientTexture1D_if3n0")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+turbulence_noise_strength = 20.0
+
+[sub_resource type="Gradient" id="Gradient_ylib7"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2v7t3"]
+gradient = SubResource("Gradient_ylib7")
+width = 128
+height = 128
+
+[node name="Awaken" type="GPUParticles2D"]
+rotation = -1.5708
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_8lje3")
+texture = SubResource("GradientTexture2D_2v7t3")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+fixed_fps = 60

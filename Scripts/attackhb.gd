@@ -34,7 +34,6 @@ func atk():
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print(area)
 	if area.has_method("damage"):
 		var atk = attack.new()
 		atk.damage = damage
@@ -45,6 +44,7 @@ func _on_area_entered(area: Area2D) -> void:
 		else:
 			atk.facing_right = false
 		area.damage(atk)
+		character.awaken_damage += damage
 
 
 func _on_timer_timeout():

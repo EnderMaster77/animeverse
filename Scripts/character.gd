@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var awaken_damage_required: float = 200.0 ## Amount of damage required to awaken
 var awakened: bool = false
 var awaken_damage: float = 0.0
+var awaken_particles: PackedScene = preload("res://Scenes/Particles/awaken.tscn")
 
 @export var accel_speed: float = 3000.0 ## Speed that the character accelerates to max speed.
 @export var max_speed: float = 1000.0 ## Maximum speed that the character can move at.
@@ -15,7 +16,7 @@ var awaken_damage: float = 0.0
 
 @export var max_dash_speed: float = 3000.0 ## How fast the player is during the dash.
 @export var dash_time: float = 0.25 ## How long a dash lasts in seconds.
-@export var dash_cooldown: float = 0.2 ## How long it takes a dash to recharge in seconds.
+@export var dash_cooldown_time: float = 0.2 ## How long it takes a dash to recharge in seconds.
 
 
 var is_dashing: bool = false
@@ -38,15 +39,25 @@ func stunned_fx(val: bool):
 func _ready():
 	$MultiplayerSynchronizer.set_multiplayer_authority(str(unique_id).to_int())
 	set_multiplayer_authority(str(unique_id).to_int())
-	#print("AUTH:",get_multiplayer_authority())
-	#print("UID:",str(unique_id).to_int())
-	#print("ID:",multiplayer.get_unique_id())
-	#print("Name:",name)
-	#if $MultiplayerSynchronizer.get_multiplayer_authority() != multiplayer.get_unique_id():
-	#`	pass
+	$awakentime.wait_time = awaken_time
+	$dashtimer.wait_time = dash_time
+	$dashcooldown.wait_time = dash_cooldown_time
+	
 func _physics_process(delta):
 	$hplabel.text = "HP: " + str($HealthComponent.hp)
-	$awakenpercentlabel.text = "Awaken: "
+	$awakenpercentlabel.text = "Awaken: " + str((awaken_damage/awaken_damage_required) * 100) + "%"
+	if Input.is_action_just_pressed("Awaken") && awaken_damage >= awaken_damage_required \
+		&& awakened ==false:
+		print("AWAKEN!")
+		awakened = true
+		$awakentime.start()
+		var particles: GPUParticles2D = awaken_particles.instantiate()
+		particles.global_position = global_position
+		particles.emitting = true
+		particles.one_shot = true
+		add_sibling(particles)
+	
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
@@ -116,3 +127,9 @@ func _on_dashtimer_timeout():
 
 func _on_dashcooldown_timeout():
 	dash_cooled_down = true
+
+
+func _on_awakentime_timeout():
+	awakened = false
+	awaken_damage = 0
+	print("Unawakened")
