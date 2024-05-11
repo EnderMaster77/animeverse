@@ -12,6 +12,7 @@ visible = false
 knockback = Vector2(5000, -2000)
 stun_duration = 0.5
 cooldown_duration = 0.3
+hit_lag_duration = 0.2
 auto_transition = false
 
 [node name="cleartimer" type="Timer" parent="."]
