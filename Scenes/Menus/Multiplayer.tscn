@@ -14,6 +14,7 @@ script = ExtResource("1_1eoga")
 
 [node name="Host" type="Button" parent="."]
 auto_translate_mode = 1
+visible = false
 layout_mode = 0
 offset_top = 256.0
 offset_right = 1920.0
@@ -23,6 +24,7 @@ text = "Host"
 
 [node name="Back" type="Button" parent="."]
 auto_translate_mode = 1
+visible = false
 layout_mode = 0
 offset_top = 768.0
 offset_right = 1920.0
@@ -33,6 +35,7 @@ text = "Back
 
 [node name="Join" type="Button" parent="."]
 auto_translate_mode = 1
+visible = false
 layout_mode = 0
 offset_top = 512.0
 offset_right = 1920.0
@@ -41,6 +44,7 @@ theme_override_font_sizes/font_size = 50
 text = "Join"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 192.0

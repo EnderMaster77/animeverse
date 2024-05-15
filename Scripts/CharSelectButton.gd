@@ -5,6 +5,3 @@ extends Button
 
 func _on_pressed():
 	Gamemanager.set_character(multiplayer.get_unique_id(), character_id)
-	
-func set_character():
-	pass

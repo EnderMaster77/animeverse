@@ -40,7 +40,7 @@ func peer_disconnected(id):
 # called only from clients
 func connected_to_server():
 	print("connected To Sever!")
-	SendPlayerInfo.rpc_id(1, $PreMenu/LineEdit2.text, multiplayer.get_unique_id())
+	SendPlayerInfo.rpc( $PreMenu/LineEdit2.text, multiplayer.get_unique_id())
 
 # called only from clients
 func connection_failed():

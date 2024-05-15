@@ -6,6 +6,7 @@ func clear(): ## Clears all server multiplayer components.
 	Players = { multiplayer.get_unique_id(): { "Username": "Host", "id": multiplayer.get_unique_id(), "characterid": 0 } }
 	multiplayer.multiplayer_peer = null
 
+@rpc("any_peer", "call_local")
 func set_character(id:int, characterid:int):
 	Players[id]["characterid"] = characterid
 	print(Players[id]["characterid"])

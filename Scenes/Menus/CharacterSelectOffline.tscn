@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdhtpeypoiqsa"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/CharSelectButton.gd" id="1_4jans"]
+[ext_resource type="Script" path="res://Scripts/CharacterList.gd" id="1_5a748"]
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -25,13 +25,4 @@ offset_top = 128.0
 offset_right = 1856.0
 offset_bottom = 1024.0
 theme_override_font_sizes/font_size = 40
-
-[node name="Button" type="Button" parent="ItemList"]
-layout_mode = 0
-offset_right = 1728.0
-offset_bottom = 64.0
-text = "Template "
-script = ExtResource("1_4jans")
-character = null
-
-[connection signal="pressed" from="ItemList/Button" to="ItemList/Button" method="_on_pressed"]
+script = ExtResource("1_5a748")
