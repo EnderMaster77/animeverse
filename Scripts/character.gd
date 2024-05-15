@@ -27,7 +27,7 @@ var dash_dir: float = 0
 var unique_id
 
 var facing_right: bool = true
-var stunned: bool = false : set = stunned_fx
+@export var stunned: bool = false : set = stunned_fx
 func stunned_fx(val: bool):
 	stunned = val
 	if stunned == true:
@@ -37,8 +37,11 @@ func stunned_fx(val: bool):
 #endregion
 
 func _ready():
-	$MultiplayerSynchronizer.set_multiplayer_authority(str(unique_id).to_int())
-	set_multiplayer_authority(str(unique_id).to_int())
+	if Gamemanager.Players.size() <= 1:
+		$MultiplayerSynchronizer.queue_free()
+	else:
+		$MultiplayerSynchronizer.set_multiplayer_authority(str(unique_id).to_int())
+		set_multiplayer_authority(str(unique_id).to_int())
 	$awakentime.wait_time = awaken_time
 	$dashtimer.wait_time = dash_time
 	$dashcooldown.wait_time = dash_cooldown_time

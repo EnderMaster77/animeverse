@@ -10,5 +10,6 @@ func _ready():
 		hp = max_hp
 
 func _process(delta):
-	if hp <= 0:
-		print("die ", get_parent())
+	return
+	#if hp <= 0:
+	#	print("die ", get_parent())

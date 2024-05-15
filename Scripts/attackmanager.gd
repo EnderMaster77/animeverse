@@ -6,7 +6,7 @@ var attacks: Array
 
 @export var first_attack: attackhb ## Set this to the first hitbox in the attack.
 @export var cleartime: float = 1.0 ## If attack transitions are not set to automatic, if you do not attack within this time frame, it will reset back to attack 1.
-@export var full_cd_duration: float = 5.0 ## Duration that this move cannot be used. Other moves may be used.
+@export var full_cooldown_duration: float = 5.0 ## Duration that this move cannot be used. Other moves may be used.
 
 var vel_mult
 
@@ -18,7 +18,7 @@ func _ready():
 	attacks = get_children()
 	current_attack = first_attack
 	$cleartimer.wait_time = cleartime
-	$cooldown.wait_time = full_cd_duration
+	$cooldown.wait_time = full_cooldown_duration
 
 func start_attack():
 	$cleartimer.stop()
@@ -36,7 +36,7 @@ func _on__attack_complete(attack_transition, auto_transition):
 			start_attack()
 	else:
 		current_attack = first_attack
-		if full_cd_duration != 0:
+		if full_cooldown_duration != 0:
 			ready_to_attack = false
 			$cooldown.start()
 	attacking = false

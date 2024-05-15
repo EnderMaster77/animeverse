@@ -20,8 +20,9 @@ func _ready():
 	set_multiplayer_authority(str(get_parent().unique_id).to_int())
 
 func _physics_process(delta):
-	if multiplayer.get_unique_id() != get_multiplayer_authority():
-		return
+	if multiplayer.multiplayer_peer != null:
+		if multiplayer.get_unique_id() != get_multiplayer_authority():
+			return
 	if l_attack_man.attacking == true:
 		#get_parent().velocity.x -= 5000 * delta
 		#get_parent().velocity.y -= 5000 * delta
@@ -56,6 +57,7 @@ func normal_inputs():
 func awakened_inputs():
 	if Input.is_action_just_pressed("LightAttack"):
 		l_attack_man.start_attack()
+		$"../Sprite2D".play("alight")
 	if Input.is_action_just_pressed("Heavy0") && ah0_attack_man.ready_to_attack == true:
 		ah0_attack_man.start_attack()
 	if Input.is_action_just_pressed("Heavy1") && ah1_attack_man.ready_to_attack == true:

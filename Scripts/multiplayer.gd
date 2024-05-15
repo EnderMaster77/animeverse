@@ -25,12 +25,18 @@ func peer_connected(id):
 	print("Player Connected " + str(id))
 	
 # this get called on the server and clients
+
 func peer_disconnected(id):
+	print(Gamemanager.Players)	
 	print("Player Disconnected " + str(id))
-	get_tree().change_scene_to_packed(mainmenu)
-	#queue_free()
-	
-	
+	Gamemanager.Players.erase(id)
+	for i in get_tree().get_nodes_in_group("Player"):
+		if i.unique_id == str(id):
+			i.queue_free()
+			break
+	if Gamemanager.Players.size() <= 1:
+		Gamemanager.clear()
+		get_tree().change_scene_to_packed(mainmenu)
 # called only from clients
 func connected_to_server():
 	print("connected To Sever!")
@@ -54,9 +60,14 @@ func SendPlayerInfo(Username, id):
 @rpc("any_peer","call_local")
 func StartGame():
 	var scene = load("res://Scenes/Stages/TestStage.tscn").instantiate()
-	get_tree().root.add_child(scene)
-	self.hide()
-	
+	# get_tree().root.add_child(scene) 
+	# The worst line of code in this entire fucking game.
+	# This line is costing me hours because of how shittily it integrates with
+	# the rest of godot, causing VITAL FUNCTIONS like change_scene_to_packed()
+	# to behave unexpectedly. Fuck this line of code, and curse the guy making the
+	# tutorial.
+	add_child(scene)
+	hide_all()
 func hostGame():
 	peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(port, 2)
@@ -86,8 +97,14 @@ func _on_back_pressed():
 	get_tree().change_scene_to_packed(mainmenu)
 
 func hide_all():
-	for i in get_children():
-		i.hide()
+	$Host.hide()
+	$Back.hide()
+	$Join.hide()
+	$Label.hide()
+	$HostMenu.hide()
+	$PreMenu.hide()
+	$JoinMenu.hide()
+	$JoinedMenu.hide()
 func show_all():
 	for i in get_children():
 		i.show()

@@ -16,3 +16,4 @@ func _ready():
 				currentplayer.global_position = spawn.global_position
 		add_child(currentplayer)
 		index += 1
+	print("Done!")

@@ -6,12 +6,13 @@
 [node name="AH0" type="Node2D" node_paths=PackedStringArray("first_attack")]
 script = ExtResource("1_l1o28")
 first_attack = NodePath("0")
+full_cooldown_duration = 0.0
 
 [node name="0" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_hwanj")]
 visible = false
 knockback = Vector2(1000, -500)
 stun_duration = 0.5
-cooldown_duration = 0.3
+cooldown_duration = 0.1
 auto_transition = false
 attack_transition = NodePath("../1")
 
@@ -19,7 +20,7 @@ attack_transition = NodePath("../1")
 visible = false
 knockback = Vector2(1000, -500)
 stun_duration = 0.5
-cooldown_duration = 0.3
+cooldown_duration = 0.1
 auto_transition = false
 attack_transition = NodePath("../2")
 
@@ -27,7 +28,7 @@ attack_transition = NodePath("../2")
 visible = false
 knockback = Vector2(3000, -1000)
 stun_duration = 0.5
-cooldown_duration = 0.2
+cooldown_duration = 0.1
 auto_transition = false
 
 [node name="cleartimer" type="Timer" parent="."]

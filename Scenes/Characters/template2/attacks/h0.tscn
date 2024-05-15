@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bppf31fad5djw"]
+[gd_scene load_steps=3 format=3 uid="uid://en7h3bhsqgb"]
 
-[ext_resource type="Script" path="res://Scripts/attackmanager.gd" id="1_g84hy"]
-[ext_resource type="PackedScene" uid="uid://cidkh7fh5ofub" path="res://Scenes/Components/attackhb.tscn" id="2_i3m17"]
+[ext_resource type="Script" path="res://Scripts/attackmanager.gd" id="1_pomyd"]
+[ext_resource type="PackedScene" uid="uid://cidkh7fh5ofub" path="res://Scenes/Components/attackhb.tscn" id="2_o6rlt"]
 
 [node name="H0" type="Node2D" node_paths=PackedStringArray("first_attack")]
-script = ExtResource("1_g84hy")
+script = ExtResource("1_pomyd")
 first_attack = NodePath("0")
 full_cooldown_duration = 0.0
 
-[node name="0" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_i3m17")]
+[node name="0" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_o6rlt")]
 visible = false
 knockback = Vector2(1000, -500)
 stun_duration = 0.5
@@ -17,7 +17,7 @@ hit_lag_duration = 0.15
 auto_transition = false
 attack_transition = NodePath("../1")
 
-[node name="1" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_i3m17")]
+[node name="1" parent="." node_paths=PackedStringArray("attack_transition") instance=ExtResource("2_o6rlt")]
 visible = false
 knockback = Vector2(1000, -500)
 stun_duration = 0.5
@@ -26,7 +26,7 @@ hit_lag_duration = 0.15
 auto_transition = false
 attack_transition = NodePath("../2")
 
-[node name="2" parent="." instance=ExtResource("2_i3m17")]
+[node name="2" parent="." instance=ExtResource("2_o6rlt")]
 visible = false
 knockback = Vector2(3000, -1000)
 stun_duration = 0.5

@@ -1,21 +1,21 @@
-[gd_scene load_steps=20 format=3 uid="uid://jiijl876a8qs"]
+[gd_scene load_steps=20 format=3 uid="uid://tmj83l5wx5t3"]
 
-[ext_resource type="Texture2D" uid="uid://b3g6n1h8ykn8g" path="res://icon.svg" id="1_0mcbh"]
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_gqk3e"]
-[ext_resource type="PackedScene" uid="uid://cstnth5yeg4sw" path="res://Scenes/Components/HealthComponent.tscn" id="3_h6tfo"]
-[ext_resource type="Script" path="res://Scripts/attacksmanager.gd" id="3_xiu0e"]
-[ext_resource type="PackedScene" uid="uid://bcdteu1jviiig" path="res://Scenes/Characters/template/attacks/light.tscn" id="4_43rue"]
-[ext_resource type="PackedScene" uid="uid://bppf31fad5djw" path="res://Scenes/Characters/template/attacks/h0.tscn" id="5_ybc8x"]
-[ext_resource type="PackedScene" uid="uid://j362yu1l1riy" path="res://Scenes/Components/PlayerHitbox.tscn" id="6_bdcdi"]
-[ext_resource type="PackedScene" uid="uid://dyyjug8rdgsn8" path="res://Scenes/Characters/template/attacks/h1.tscn" id="6_ui3rp"]
-[ext_resource type="PackedScene" uid="uid://docwvveq11n7n" path="res://Scenes/Characters/template/attacks/h2.tscn" id="7_8tifv"]
-[ext_resource type="PackedScene" uid="uid://cn0x7ofqfsw8n" path="res://Scenes/Characters/template/attacks/h3.tscn" id="8_mbwhc"]
-[ext_resource type="PackedScene" uid="uid://c66mm6o7g4bcn" path="res://Scenes/Characters/template/attacks/h4.tscn" id="9_77xv1"]
-[ext_resource type="PackedScene" uid="uid://c261n1knq34up" path="res://Scenes/Characters/template/attacks/ah0.tscn" id="12_4c71y"]
-[ext_resource type="PackedScene" uid="uid://bxyoa4g61qtaj" path="res://Scenes/Characters/template/attacks/ah1.tscn" id="13_wrirh"]
-[ext_resource type="PackedScene" uid="uid://brm2dvytugju8" path="res://Scenes/Characters/template/attacks/ah2.tscn" id="14_4p7ve"]
-[ext_resource type="PackedScene" uid="uid://cmc1t6ed3167t" path="res://Scenes/Characters/template/attacks/ah3.tscn" id="15_8df6g"]
-[ext_resource type="PackedScene" uid="uid://j3fegltj2i3w" path="res://Scenes/Characters/template/attacks/ah4.tscn" id="16_718rx"]
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_22uft"]
+[ext_resource type="Texture2D" uid="uid://b3g6n1h8ykn8g" path="res://icon.svg" id="2_bhq1l"]
+[ext_resource type="PackedScene" uid="uid://cstnth5yeg4sw" path="res://Scenes/Components/HealthComponent.tscn" id="3_f8k2s"]
+[ext_resource type="PackedScene" uid="uid://j362yu1l1riy" path="res://Scenes/Components/PlayerHitbox.tscn" id="4_285m4"]
+[ext_resource type="Script" path="res://Scripts/attacksmanager.gd" id="5_gwk8w"]
+[ext_resource type="PackedScene" uid="uid://bcdteu1jviiig" path="res://Scenes/Characters/template/attacks/light.tscn" id="6_yah0a"]
+[ext_resource type="PackedScene" uid="uid://dyyjug8rdgsn8" path="res://Scenes/Characters/template/attacks/h1.tscn" id="7_gywi4"]
+[ext_resource type="PackedScene" uid="uid://docwvveq11n7n" path="res://Scenes/Characters/template/attacks/h2.tscn" id="8_t2vry"]
+[ext_resource type="PackedScene" uid="uid://cn0x7ofqfsw8n" path="res://Scenes/Characters/template/attacks/h3.tscn" id="9_jbcey"]
+[ext_resource type="PackedScene" uid="uid://c66mm6o7g4bcn" path="res://Scenes/Characters/template/attacks/h4.tscn" id="10_164uy"]
+[ext_resource type="PackedScene" uid="uid://bppf31fad5djw" path="res://Scenes/Characters/template/attacks/h0.tscn" id="11_fy8on"]
+[ext_resource type="PackedScene" uid="uid://c261n1knq34up" path="res://Scenes/Characters/template/attacks/ah0.tscn" id="12_8qyoy"]
+[ext_resource type="PackedScene" uid="uid://bxyoa4g61qtaj" path="res://Scenes/Characters/template/attacks/ah1.tscn" id="13_h5sd0"]
+[ext_resource type="PackedScene" uid="uid://brm2dvytugju8" path="res://Scenes/Characters/template/attacks/ah2.tscn" id="14_j4qyg"]
+[ext_resource type="PackedScene" uid="uid://cmc1t6ed3167t" path="res://Scenes/Characters/template/attacks/ah3.tscn" id="15_8w2un"]
+[ext_resource type="PackedScene" uid="uid://j3fegltj2i3w" path="res://Scenes/Characters/template/attacks/ah4.tscn" id="16_e4o55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eo4l"]
 size = Vector2(128, 128)
@@ -24,7 +24,7 @@ size = Vector2(128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"adash",
@@ -32,7 +32,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"ah0",
@@ -40,7 +40,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"ah1",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"ah2",
@@ -56,7 +56,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"ah3",
@@ -64,7 +64,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"ah4",
@@ -72,7 +72,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"aidle",
@@ -80,7 +80,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"alight",
@@ -88,7 +88,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"arun",
@@ -96,7 +96,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"astop_running",
@@ -104,7 +104,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"dash",
@@ -112,7 +112,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"h0",
@@ -120,7 +120,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"h1",
@@ -128,7 +128,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"h2",
@@ -136,7 +136,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"h3",
@@ -144,7 +144,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"h4",
@@ -152,7 +152,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"idle",
@@ -160,7 +160,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"light",
@@ -168,7 +168,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"run",
@@ -176,7 +176,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0mcbh")
+"texture": ExtResource("2_bhq1l")
 }],
 "loop": true,
 "name": &"stop_running",
@@ -190,12 +190,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:facing_right")
 properties/1/spawn = true
 properties/1/replication_mode = 1
-properties/2/path = NodePath(".:stunned")
-properties/2/spawn = true
-properties/2/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player", "Trackable"]]
-script = ExtResource("1_gqk3e")
+script = ExtResource("1_22uft")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2eo4l")
@@ -204,9 +201,9 @@ shape = SubResource("RectangleShape2D_2eo4l")
 sprite_frames = SubResource("SpriteFrames_o24ec")
 animation = &"arun"
 
-[node name="HealthComponent" parent="." instance=ExtResource("3_h6tfo")]
+[node name="HealthComponent" parent="." instance=ExtResource("3_f8k2s")]
 
-[node name="PlayerHitbox" parent="." node_paths=PackedStringArray("healthcomponent") instance=ExtResource("6_bdcdi")]
+[node name="PlayerHitbox" parent="." node_paths=PackedStringArray("healthcomponent") instance=ExtResource("4_285m4")]
 collision_layer = 2
 collision_mask = 2
 healthcomponent = NodePath("../HealthComponent")
@@ -228,7 +225,7 @@ wait_time = 30.0
 one_shot = true
 
 [node name="Attacks" type="Node2D" parent="." node_paths=PackedStringArray("l_attack_man", "h0_attack_man", "h1_attack_man", "h2_attack_man", "h3_attack_man", "h4_attack_man", "ah0_attack_man", "ah1_attack_man", "ah2_attack_man", "ah3_attack_man", "ah4_attack_man")]
-script = ExtResource("3_xiu0e")
+script = ExtResource("5_gwk8w")
 l_attack_man = NodePath("Light")
 h0_attack_man = NodePath("H0")
 h1_attack_man = NodePath("H1")
@@ -241,47 +238,47 @@ ah2_attack_man = NodePath("AH2")
 ah3_attack_man = NodePath("AH3")
 ah4_attack_man = NodePath("AH4")
 
-[node name="Light" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("4_43rue")]
+[node name="Light" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("6_yah0a")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="H1" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("6_ui3rp")]
+[node name="H1" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("7_gywi4")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="H2" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("7_8tifv")]
+[node name="H2" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("8_t2vry")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="H3" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("8_mbwhc")]
+[node name="H3" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("9_jbcey")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="H4" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("9_77xv1")]
+[node name="H4" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("10_164uy")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="H0" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("5_ybc8x")]
+[node name="H0" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("11_fy8on")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="AH0" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("12_4c71y")]
+[node name="AH0" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("12_8qyoy")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="AH1" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("13_wrirh")]
+[node name="AH1" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("13_h5sd0")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="AH2" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("14_4p7ve")]
+[node name="AH2" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("14_j4qyg")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="AH3" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("15_8df6g")]
+[node name="AH3" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("15_8w2un")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 
-[node name="AH4" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("16_718rx")]
+[node name="AH4" parent="Attacks" node_paths=PackedStringArray("first_attack") instance=ExtResource("16_e4o55")]
 position = Vector2(72, 0)
 first_attack = NodePath("0")
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdvkdoh68f74"]
+
+[ext_resource type="Script" path="res://Scripts/attackmanager.gd" id="1_1vg3v"]
+[ext_resource type="PackedScene" uid="uid://cidkh7fh5ofub" path="res://Scenes/Components/attackhb.tscn" id="2_x03da"]
+
+[node name="AH1" type="Node2D" node_paths=PackedStringArray("first_attack")]
+script = ExtResource("1_1vg3v")
+first_attack = NodePath("0")
+
+[node name="0" parent="." instance=ExtResource("2_x03da")]
+visible = false
+knockback = Vector2(5000, -2000)
+stun_duration = 0.5
+cooldown_duration = 0.3
+auto_transition = false
+
+[node name="cleartimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="attack_complete" from="0" to="." method="_on__attack_complete"]
+[connection signal="timeout" from="cleartimer" to="." method="_on_cleartimer_timeout"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
