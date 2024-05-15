@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Character
 #region Variables
 @export var awaken_time: float = 20.0 ## Time Awaken lasts.
 @export var awaken_damage_required: float = 200.0 ## Amount of damage required to awaken
@@ -25,9 +25,10 @@ var can_dash: bool = true
 var dash_dir: float = 0
 
 var unique_id
+@export var char_id: int = 0 ## ID of character. Make sure every ID is different. 
 
 var facing_right: bool = true
-@export var stunned: bool = false : set = stunned_fx
+@export var stunned: bool = false : set = stunned_fx ## Do not change this value. This is only to allow the value to be synced with the server.
 func stunned_fx(val: bool):
 	stunned = val
 	if stunned == true:

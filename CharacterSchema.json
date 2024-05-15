@@ -1,0 +1,11 @@
+{
+	"Characters":
+	{
+		"0":{
+			"name":"Template",
+			"description":"Template description. For use later.",
+			"id":0,
+			"File":"res://Scenes/Characters/template/template.tscn"
+		}
+	}
+}
