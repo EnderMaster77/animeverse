@@ -198,6 +198,7 @@ script = ExtResource("1_22uft")
 shape = SubResource("RectangleShape2D_2eo4l")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_o24ec")
 animation = &"arun"
 

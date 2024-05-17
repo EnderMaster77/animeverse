@@ -9,6 +9,6 @@
 			"name":"Template2",
 			"description":"Template description. For use later.",
 			"id":1,
-			"File":"res://Scenes/Characters/template/template.tscn"
+			"File":"res://Scenes/Characters/template2/template.tscn"
 		},
 	}

@@ -1,5 +1,5 @@
 extends Control
-var testscene: PackedScene = load("res://Scenes/Stages/TestStage.tscn")
+var testscene: PackedScene = load("res://Scenes/Menus/CharacterSelectOffline.tscn")
 var multiplayerscene: PackedScene = load("res://Scenes/Menus/Multiplayer.tscn")
 
 func _on_play_local_pressed():

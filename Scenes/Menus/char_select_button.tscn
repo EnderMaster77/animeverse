@@ -8,6 +8,5 @@ offset_right = 1728.0
 offset_bottom = 64.0
 text = "Template "
 script = ExtResource("1_ul5h1")
-character = null
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

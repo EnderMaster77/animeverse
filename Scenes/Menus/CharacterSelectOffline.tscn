@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdhtpeypoiqsa"]
+[gd_scene load_steps=3 format=3 uid="uid://cdhtpeypoiqsa"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterList.gd" id="1_5a748"]
+[ext_resource type="Script" path="res://Scenes/Menus/character_select_offline.gd" id="1_hagqn"]
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hagqn")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -26,3 +28,13 @@ offset_right = 1856.0
 offset_bottom = 1024.0
 theme_override_font_sizes/font_size = 40
 script = ExtResource("1_5a748")
+
+[node name="PlayLocal" type="Button" parent="."]
+auto_translate_mode = 1
+offset_top = 952.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 50
+text = "Play Local"
+
+[connection signal="pressed" from="PlayLocal" to="." method="_on_play_local_pressed"]
